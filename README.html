@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html<Bilevel_Ridge></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>Ridge regression as a bilevel-optimization problem.</h1>
+
+<p>This code implements ridge regression in a bilevel programming framework in which an inner loop optimizes the parameters $\beta$ given a certain value of the hyper-parameter $\lambda$, then the gradient of the validation loss wrt $\lambda$ (hyper-gradient) is computed through reverse-mode and finally used to update the hyper-parameter $\lambda$. Complete reference for reverse mode for hyper-gradient computation can be found in (https://arxiv.org/abs/1703.01785).</p>
+
+<p>A bilevel optimization problem can be described as the optimization of an outer function in which some of its variables are constraint to be the optimal solution of an inner problem. In the case of ridge regression this can be wrote as
+$$
+\underset{\lambda}{argmax} \Vert y<em>{val} - X</em>{val}\beta \Vert
+\
+st. \lambda \geq 0
+\
+\beta = \underset{\beta}{argmin} \Vert y<em>{train} - X</em>{train}\beta \Vert + \lambda \Vert\beta\Vert
+$$</p>
+
+</body>
+</html>
